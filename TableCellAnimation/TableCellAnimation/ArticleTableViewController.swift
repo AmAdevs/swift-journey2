@@ -64,6 +64,8 @@ class ArticleTableViewController: UITableViewController {
         // Define the initial state (Before the animation)
         let rotationAngleInRadians = 90.0 * CGFloat(Double.pi/180.0)
         let rotationTransform = CATransform3DMakeRotation(rotationAngleInRadians, 0, 0, 1)
+        // for translate
+        //let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, -500, 100, 0)
         cell.layer.transform = rotationTransform
         
         // Define the final state (After the animaltion)
