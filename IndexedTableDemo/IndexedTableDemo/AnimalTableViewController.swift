@@ -15,6 +15,8 @@ class AnimalTableViewController: UITableViewController {
     var animalDict = [String: [String]]()
     var animalSectionTitles = [String]()
     
+    let animalIndexTitles = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" ]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,7 +81,16 @@ class AnimalTableViewController: UITableViewController {
     }
     
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return animalSectionTitles
+        return animalIndexTitles
+    }
+    
+    override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+       
+        guard let index = animalSectionTitles.firstIndex(of: title) else {
+            return -1
+        }
+     
+        return index
     }
 
 }
