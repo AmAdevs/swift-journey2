@@ -77,5 +77,9 @@ class AnimalTableViewController: UITableViewController {
         }
         return cell
     }
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return animalSectionTitles
+    }
 
 }
