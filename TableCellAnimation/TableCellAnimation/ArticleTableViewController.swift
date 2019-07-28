@@ -54,5 +54,13 @@ class ArticleTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // Define the initial state (Before the animation)
+        cell.alpha = 0
+        
+        // Define the final state (After the animation)
+        UIView.animate(withDuration: 1.0, animations: { cell.alpha = 1 })
+    }
+    
 
 }
