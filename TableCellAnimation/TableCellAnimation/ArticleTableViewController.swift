@@ -18,6 +18,9 @@ class ArticleTableViewController: UITableViewController {
                       "A Beginner's Guide to CALayer"];
     let postImages = ["imessage-sticker-pack", "face-detection-featured", "speech-kit-featured", "vapor-web-framework", "cagradientlayer-demo", "calayer-featured"];
 
+    // show image Bool
+    var postShown = [Bool](repeating: false, count: 6)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -55,6 +58,15 @@ class ArticleTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        if postShown[indexPath.row] {
+            print( postShown[indexPath.row])
+            return
+        }
+        
+        postShown[indexPath.row] = true
+        
+        
         // Define the initial state (Before the animation)
         cell.alpha = 0
         
@@ -72,5 +84,6 @@ class ArticleTableViewController: UITableViewController {
         UIView.animate(withDuration: 1.0, animations: { cell.layer.transform = CATransform3DIdentity })
     }
     
+
 
 }
