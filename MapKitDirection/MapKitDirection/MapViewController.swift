@@ -15,8 +15,18 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     var restaurant:Restaurant!
 
+    let locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Request for a user' authorization for location services
+        locationManager.requestWhenInUseAuthorization()
+        let status = CLLocationManager.authorizationStatus()
+        
+        if status == CLAuthorizationStatus.authorizedWhenInUse {
+            mapView.showsUserLocation = true
+        }
 
         // Convert address to coordinate and annotate it on map
         let geoCoder = CLGeocoder()
