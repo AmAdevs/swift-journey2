@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8BCB1D8EF487D1315765978E /* Pods_SocialSharingDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74A8F9265E4E62C348291603 /* Pods_SocialSharingDemo.framework */; };
 		F49890B11DA4A2010064F982 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49890B01DA4A2010064F982 /* AppDelegate.swift */; };
 		F49890B61DA4A2010064F982 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F49890B41DA4A2010064F982 /* Main.storyboard */; };
 		F49890B81DA4A2010064F982 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F49890B71DA4A2010064F982 /* Assets.xcassets */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		74A8F9265E4E62C348291603 /* Pods_SocialSharingDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialSharingDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5BE82701B49C2EA93ED631D /* Pods-SocialSharingDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialSharingDemo.debug.xcconfig"; path = "Target Support Files/Pods-SocialSharingDemo/Pods-SocialSharingDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		B6BB87BEDE1B2EF61EE62899 /* Pods-SocialSharingDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialSharingDemo.release.xcconfig"; path = "Target Support Files/Pods-SocialSharingDemo/Pods-SocialSharingDemo.release.xcconfig"; sourceTree = "<group>"; };
 		F49890AD1DA4A2010064F982 /* SocialSharingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialSharingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F49890B01DA4A2010064F982 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F49890B51DA4A2010064F982 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BCB1D8EF487D1315765978E /* Pods_SocialSharingDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06EDEBA4833CE5DC7F4C0A04 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A5BE82701B49C2EA93ED631D /* Pods-SocialSharingDemo.debug.xcconfig */,
+				B6BB87BEDE1B2EF61EE62899 /* Pods-SocialSharingDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		62EC83D1EAF6B8D6C490024C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				74A8F9265E4E62C348291603 /* Pods_SocialSharingDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F49890A41DA4A2000064F982 = {
 			isa = PBXGroup;
 			children = (
 				F49890AF1DA4A2010064F982 /* SocialSharingDemo */,
 				F49890AE1DA4A2010064F982 /* Products */,
+				06EDEBA4833CE5DC7F4C0A04 /* Pods */,
+				62EC83D1EAF6B8D6C490024C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F49890BF1DA4A2010064F982 /* Build configuration list for PBXNativeTarget "SocialSharingDemo" */;
 			buildPhases = (
+				65180EA7D4D877E565ADF173 /* [CP] Check Pods Manifest.lock */,
 				F49890A91DA4A2010064F982 /* Sources */,
 				F49890AA1DA4A2010064F982 /* Frameworks */,
 				F49890AB1DA4A2010064F982 /* Resources */,
+				949E5F450D0CDD6EC60254E0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,6 +162,63 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		65180EA7D4D877E565ADF173 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SocialSharingDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		949E5F450D0CDD6EC60254E0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SocialSharingDemo/Pods-SocialSharingDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SocialSharingDemo/Pods-SocialSharingDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F49890A91DA4A2010064F982 /* Sources */ = {
@@ -279,12 +362,13 @@
 		};
 		F49890C01DA4A2010064F982 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5BE82701B49C2EA93ED631D /* Pods-SocialSharingDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 44YS9Y765K;
 				INFOPLIST_FILE = SocialSharingDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appcoda.SocialSharingDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ananchai.SocialSharingDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
@@ -293,12 +377,13 @@
 		};
 		F49890C11DA4A2010064F982 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6BB87BEDE1B2EF61EE62899 /* Pods-SocialSharingDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 44YS9Y765K;
 				INFOPLIST_FILE = SocialSharingDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.appcoda.SocialSharingDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ananchai.SocialSharingDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
